@@ -1,55 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clifton Depp - Web Developer</title>
+<title>Clifton Depp - Security Lab</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;padding:20px}
-nav{text-align:center;padding:15px}
-nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;font-size:18px}
-.box{max-width:800px;margin:20px auto;background:white;border-radius:20px;padding:40px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
-h1{font-size:48px;color:#667eea}
-h2{color:#333;margin:10px 0}
-.badge{background:#667eea;color:white;padding:8px 20px;border-radius:20px;display:inline-block;margin:5px}
-.card{background:#f5f7ff;padding:20px;border-radius:15px;margin:20px 0;text-align:left}
-button{background:#667eea;color:white;border:none;padding:15px 35px;border-radius:30px;font-size:18px;cursor:pointer;margin:5px}
-button:hover{background:#5a6fd6}
-.whatsapp{background:#25D366}
+body{background:#050a05;color:#00ff88;font-family:monospace;margin:0;padding:0}
+header{padding:30px;text-align:center;border-bottom:2px solid #00ff88;background:#000}
+h1{font-size:32px;letter-spacing:3px;text-shadow:0 0 10px #00ff88}
+.tag{color:#fff;opacity:0.7}
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:#0f1a0f;border:1px solid #00ff88;padding:20px;margin:20px 0;border-radius:12px;box-shadow:0 0 15px #00ff8833}
+h2{color:#00ff88}
+input,button{padding:12px;width:100%;margin:8px 0;border-radius:8px;border:1px solid #00ff88;background:#000;color:#00ff88;font-family:monospace}
+button{background:#00ff88;color:#000;font-weight:bold;cursor:pointer}
+button:hover{background:#fff}
+.result{padding:10px;background:#000;border-left:3px solid #00ff88;margin-top:10px}
+footer{text-align:center;padding:20px;opacity:0.6;font-size:12px}
 </style>
 </head>
 <body>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-<div class="box">
-<h1>🎉 Hello World! 🎉</h1>
-<h2>I am Clifton Depp</h2>
-<span class="badge">Web Developer</span>
-<span class="badge">AI Owner</span>
-<span class="badge">HP OMEN 144Hz</span>
+<header>
+<h1>CLIFTON DEPP SECURITY LAB</h1>
+<div class="tag">Ethical Hacking World | Built for Education & Defense</div>
+<div class="tag">Owner: Clifton Depp | HP OMEN Lab | Private AI: Qwen 2.5</div>
+</header>
+
+<div class="container">
 
 <div class="card">
-<h3>Welcome to My First Website!</h3>
-<p>This is my first website live on the Internet!</p>
-<p><b>Today: I became a Web Developer!</b></p>
-<p>I built this with GitHub + Vercel + My own private AI Qwen 2.5 inside my laptop!</p>
+<h2>[ FLOOR 1 ] MY SAFE FAKE BANK LAB</h2>
+<p>This is YOUR OWN fake bank. You own it. You can test it safely. No real bank here.</p>
+<input id="user" placeholder="Test Username: try admin">
+<input id="pass" type="password" placeholder="Test Password: try 1234">
+<button onclick="testLogin()">Test My Fake Bank Login</button>
+<div id="loginResult" class="result">Result will show here... This teaches you why weak passwords fail.</div>
 </div>
 
 <div class="card">
-<h3>🚀 What I Built</h3>
-<p>✅ Live Website: simple-website-chi-wine.vercel.app</p>
-<p>✅ Private AI: Qwen 2.5 (4.7GB) running offline</p>
-<p>✅ Laptop: HP OMEN Gaming Laptop</p>
+<h2>[ FLOOR 2 ] PASSWORD POWER CHECKER</h2>
+<p>Build powerful defense! Check how strong a password is.</p>
+<input id="pw" placeholder="Type a password to test strength" oninput="checkPw()">
+<div id="pwResult" class="result">Strength: ---</div>
+<p style="font-size:12px;color:#aaa">Lesson: Real banks block weak passwords. Now you know how!</p>
 </div>
 
-<button onclick="alert('Thank you for visiting! - Clifton Depp')">Click Me! 👋</button>
-<br><br>
-<a href="https://wa.me/234000000000"><button class="whatsapp">WhatsApp Me 💬</button></a>
-<p style="margin-top:20px">Website made with ❤️</p>
+<div class="card">
+<h2>[ FLOOR 3 ] SPAM & PHISHING DETECTOR LAB</h2>
+<p>Paste a suspicious email or link here:</p>
+<input id="spam" placeholder="e.g., Dear user, your bank account blocked, click http://fake-bank.com">
+<button onclick="checkSpam()">Scan for Spam Signs</button>
+<div id="spamResult" class="result">I will teach you how to spot spam.</div>
 </div>
+
+<div class="card">
+<h2>[ FLOOR 4 ] WHAT I LEARN TODAY</h2>
+<p>✅ I built my own Security Lab<br>
+✅ I learned how hackers guess weak passwords<br>
+✅ I learned how to DEFEND banks, not attack them<br>
+✅ Next: I will add a blog and show companies my skills!</p>
+<p style="color:#fff">This is MASSIVE, Clifton! You are now an Ethical Hacker!</p>
+</div>
+
+</div>
+
+<footer>© 2026 Clifton Depp Security Lab - Built for Education Only - Protect, Don't Attack</footer>
+
+<script>
+function testLogin(){
+  const u=document.getElementById('user').value;
+  const p=document.getElementById('pass').value;
+  const r=document.getElementById('loginResult');
+  if(p.length < 6){
+    r.innerHTML = "❌ WEAK! Real banks would BLOCK this. Lesson: Use 12+ characters, numbers, symbols. You just learned defense!";
+  } else if(u==="admin" && p==="1234"){
+    r.innerHTML = "⚠️ This is the most hacked password in the world! Ethical lesson: Never use admin/1234. Real hackers try this first. Now you know how to stop them.";
+  } else {
+    r.innerHTML = "✅ Strong attempt! In a real secure bank, password would be encrypted and checked safely. You are learning how banks PROTECT.";
+  }
+}
+function checkPw(){
+  const p=document.getElementById('pw').value;
+  const r=document.getElementById('pwResult');
+  let score=0;
+  if(p.length>=8) score++;
+  if(p.length>=12) score++;
+  if(/[0-9]/.test(p)) score++;
+  if(/[^A-Za-z0-9]/.test(p)) score++;
+  if(score<=1) r.innerHTML="Strength: WEAK - Easy to hack";
+  else if(score==2) r.innerHTML="Strength: MEDIUM";
+  else if(score>=3) r.innerHTML="Strength: STRONG - Good defense! 💪";
+}
+function checkSpam(){
+  const t=document.getElementById('spam').value.toLowerCase();
+  const r=document.getElementById('spamResult');
+  if(t.includes("click") && t.includes("bank") || t.includes("urgent") || t.includes("http://")){
+    r.innerHTML="🚨 SPAM SIGNS FOUND! Words like 'urgent', 'click', 'bank blocked' + strange link = Phishing! Lesson: Real banks never send links like this.";
+  } else if(t.length<5){
+    r.innerHTML="Paste a suspicious message to learn.";
+  } else {
+    r.innerHTML="✅ Looks cleaner, but always check sender email! You are learning to protect people.";
+  }
+}
+</script>
 </body>
 </html>
